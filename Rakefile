@@ -6,6 +6,7 @@ CLOBBER.include('reports/*')
 TXT_DIR    = "#{Dir.pwd}/meals/"
 OUTPUT_DIR = "#{Dir.pwd}/reports/"
 OUTPUT_FILE = OUTPUT_DIR + "report_#{Time.now.strftime('%Y%m%d')}.txt"
+BACKUP_DIR = "backups"
 
 FILE_EXT = '.txt'
 MEALS = [
@@ -53,4 +54,10 @@ DESC
   File.open(output_file, 'w') {|f|
     f.write output_str
   }
+end
+
+directory BACKUP_DIR
+desc "レポートをバックアップする"
+task :backup => BACKUP_DIR do
+  sh "copy reports\\* backups\\"
 end
