@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+require 'rake/clean'
+CLEAN.include('meals/*')
+CLOBBER.include('reports/*')
 
 TXT_DIR    = "#{Dir.pwd}/meals/"
 OUTPUT_DIR = "#{Dir.pwd}/reports/"
