@@ -6,6 +6,18 @@ module Todo
   # @author bobchin
   class Command
 
+    # 外部から呼び出すエントリポイント
+    # @param array コマンドライン引数
+    def self.run(argv)
+      # 自身をインスタンス化してexecuteを実行
+      new(argv).execute
+    end
+
+    # イニシャライズ
+    def initialize(argv)
+      @argv = argv
+    end
+
     def execute
       DB.prepare
     end
