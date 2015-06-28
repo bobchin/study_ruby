@@ -3,7 +3,7 @@
 module Todo
 
 # コマンドラインベースの処理をするクラス
-# @authtor bobchin
+# @author bobchin
 class Command
 end
 
