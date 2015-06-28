@@ -7,6 +7,8 @@ module Todo
   # tasksテーブルを表現するモデル
   # @author bobchin
   class Task < ActiveRecord::Base
+    scope :status_is, ->(status) { where(status: status) }
+
     NOT_YET = 0 # タスク未完了
     DONE    = 1 # タスク完了
     PENDING = 2 # タスク保留中
