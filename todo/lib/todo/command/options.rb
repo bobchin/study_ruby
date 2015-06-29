@@ -25,6 +25,8 @@ module Todo
         rescue OptionParser::MissingArgument, OptionParser::InvalidOption, ArgumentError => e
           abort e.message
         end
+
+        options
       end
 
       def self.create_sub_command_parsers(options)
